@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5vp812v1gswk"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_jf1jl"]
+[ext_resource type="Script" path="res://player_graphics.gd" id="2_xoedy"]
+[ext_resource type="AudioStream" path="res://Laser_Shoot17.wav" id="3_x0ayt"]
+[ext_resource type="AudioStream" path="res://Hit_Hurt29.wav" id="4_c54pf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e501b"]
+
+[node name="Player" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_jf1jl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e501b")
+
+[node name="Graphics" type="Node2D" parent="."]
+script = ExtResource("2_xoedy")
+
+[node name="ShootTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.25
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_x0ayt")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_c54pf")

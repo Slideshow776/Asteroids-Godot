@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw4pvt5iohpd6"]
+
+[ext_resource type="AudioStream" path="res://jupiter-rising-ambient-space-music-129014.mp3" id="1_lyhca"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_lyhca")
+volume_db = -10.0
+autoplay = true

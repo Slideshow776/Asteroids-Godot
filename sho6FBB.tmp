@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://q31tvftjvu2v"]
+
+[ext_resource type="Script" path="res://shot.gd" id="1_edd57"]
+[ext_resource type="Script" path="res://shot_graphics.gd" id="2_t3mx1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv3es"]
+radius = 6.0
+
+[node name="Shot" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_edd57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rv3es")
+
+[node name="Graphics" type="Node2D" parent="."]
+script = ExtResource("2_t3mx1")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.25
+one_shot = true
+autostart = true
